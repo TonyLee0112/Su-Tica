@@ -27,4 +27,7 @@ public:
 
 	// 통합 좌표 저장 함수
 	void Get_every();
+
+	coordinate operator+(coordinate b);
+	coordinate operator-(coordinate b);
 };

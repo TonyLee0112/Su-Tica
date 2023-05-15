@@ -9,24 +9,12 @@ void coordinate::Car2Cyl() {
 	cout << "Data is transformed to Cartesian from Cylindrical" << endl;
 }
 void coordinate::Car2Sph() {
-	if (r < 0) {
-		cout << "Error : Negative r cannot be defined" << endl;
-		return;
-	};
-	r = sqrt(x * x + y * y + z * z);
-	theta = acos(z / r);
-	phi = atan(y / x);
-	cout << "Data is transformed to Cartesian from Spherical" << endl;
-}
+		r = sqrt(x * x + y * y + z * z);
+		theta = acos(z / r);
+		phi = atan(y / x);
+		cout << "Data is transformed to Cartesian from Spherical" << endl;
+	}
 void coordinate::Cyl2Sph() {
-	if (r < 0) {
-		cout << "Error : Negative r cannot be defined" << endl;
-		return;
-	};
-	if (rho < 0) {
-		cout << "Error : Negative rho cannot be defined" << endl;
-		return;
-	};
 	r = sqrt(rho * rho + z * z);
 	theta = asin(rho / r);
 	cout << "Data is transformed to Cylindrical from Spherical" << endl;
@@ -38,20 +26,12 @@ void coordinate::Cyl2Car() {
 	cout << "Data is transformed to Cylindrical from Cartesian" << endl;
 }
 void coordinate::Sph2Car() {
-	if (r < 0) {
-		cout << "Error : Negative r cannot be defined" << endl;
-		return;
-	};
 	z = r * cos(theta);
 	x = r * sin(theta) * cos(phi);
 	y = r * sin(theta) * sin(phi);
 	cout << "Data is transformed to Spherical from Cartesian" << endl;
 }
 void coordinate::Sph2Cyl() {
-	if (r < 0) {
-		cout << "Error : Negative r cannot be defined" << endl;
-		return;
-	};
 	z = r * cos(theta);
 	rho = r * sin(theta);
 	cout << "Data is transformed to Spherical from Cylindrical" << endl;
@@ -86,4 +66,26 @@ void coordinate::Get_every() {
 		Sph2Car();
 		Sph2Cyl();
 	}
+};
+coordinate coordinate::operator+(coordinate b) {
+	coordinate c;
+	c.x = x + b.x;
+	c.y = y + b.y;
+	c.z = z + b.z;
+	c.rho = rho + b.rho;
+	c.phi = phi + b.phi;
+	c.theta = theta + b.theta;
+	c.r = r + b.r;
+	return c;
+};
+coordinate coordinate::operator-(coordinate b) {
+	coordinate c;
+	c.x = x - b.x;
+	c.y = y - b.y;
+	c.z = z - b.z;
+	c.rho = rho - b.rho;
+	c.phi = phi - b.phi;
+	c.theta = theta - b.theta;
+	c.r = r - b.r;
+	return c;
 };
