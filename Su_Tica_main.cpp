@@ -4,8 +4,8 @@
 using namespace std;
 void main() {
 	coordinate ex;
-	const double Pi = 3.14159265358979;
-	ex = coordinate(3, Pi/3, Pi, 2);
+	const float Pi = 3.1415926;
+	ex = coordinate(2, Pi/2,0, 2);
 	ex.Show_Spherical();
 	ex.Sph2Car();
 	ex.Show_Cartesian();
