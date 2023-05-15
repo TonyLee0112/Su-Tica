@@ -72,3 +72,18 @@ void coordinate::Show_Spherical() {
 	cout << "theta : " << theta << endl;
 	cout << "phi : " << phi << endl;
 }
+
+void coordinate::Get_every() {
+	if (k == 0) {
+		Car2Cyl();
+		Car2Sph();
+	}
+	else if (k == 1) {
+		Cyl2Car();
+		Cyl2Sph();
+	}
+	else if (k == 2) {
+		Sph2Car();
+		Sph2Cyl();
+	}
+};

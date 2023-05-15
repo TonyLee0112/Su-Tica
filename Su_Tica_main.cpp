@@ -3,16 +3,15 @@
 #include "coordinate_system.h"
 using namespace std;
 void main() {
-	coordinate ex;
+	coordinate ex[5];
 	const float Pi = 3.1415926;
-	ex = coordinate(2, Pi/2,0, 2);
-	ex.Show_Spherical();
-	ex.Sph2Car();
-	ex.Show_Cartesian();
-	ex.Car2Cyl();
-	ex.Show_Cylindrical();
-	ex.Cyl2Sph();
-	ex.Show_Spherical();
-	ex.Sph2Car();
-	ex.Show_Cartesian();
+	for (int i = 0; i < 5; i++) {
+		cout << i << "¹ø Â° Coordinate object" << endl;
+		ex[i]= coordinate( 2*i+1,i+3 ,i-4 , 0);
+		ex[i].Get_every();
+		ex[i].Show_Cartesian();
+		ex[i].Show_Cylindrical();
+		ex[i].Show_Spherical();
+	}
+	
 }
