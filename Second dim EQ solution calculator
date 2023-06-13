@@ -9,7 +9,7 @@ void sol_two_dim_eq(float a, float b, float c) {
 	// this program returns solutions of second dimension equation as ax^2 + bx + c = 0
 	float D = b * b - 4 * a * c;
 	if (D > 0) {
-		cout << "This equation has two real number solution" << endl;
+		cout << "This equation has two real number solutions" << endl;
 		cout << "x1 = " << (-b + D) / 2 << endl;
 		cout << "x2 = " << (-b - D) / 2 << endl;
 	}
@@ -20,7 +20,7 @@ void sol_two_dim_eq(float a, float b, float c) {
 		complex<float> x, y,j(0,1); // re + im*j
 		x = -b / 2 + (D / 2) * j;
 		y = -b / 2 - (D / 2) * j;
-		cout << "This equation has two complex solution" << endl;
+		cout << "This equation has two complex solutions" << endl;
 		cout << "x1 = " << x << "\n x2 = " << y << endl;
 	}
 }
