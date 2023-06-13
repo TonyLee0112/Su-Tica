@@ -1,0 +1,31 @@
+// With Complex class
+
+#include<iostream>
+#include<complex>
+using namespace std;
+
+void sol_two_dim_eq(float a, float b, float c) {
+	// this program returns solutions of second dimension equation as ax^2 + bx + c = 0
+	float D = b * b - 4 * a * c;
+	if (D > 0) {
+		cout << "This equation has two real number solution" << endl;
+		cout << "x1 = " << (-b + D) / 2 << endl;
+		cout << "x2 = " << (-b - D) / 2 << endl;
+	}
+	else if (D == 0) {
+		cout << "This equation has same solution which is " << -b / 2 << endl;
+	}
+	else {
+		complex<float> x, y,j(0,1); // re + im*j
+		x = -b / 2 + (D / 2) * j;
+		y = -b / 2 - (D / 2) * j;
+		cout << "This equation has two complex solution" << endl;
+		cout << "x1 = " << x << "\n x2 = " << y << endl;
+	}
+}
+void main() {
+	float a, b, c;
+	cin >> a >> b >> c;
+	sol_two_dim_eq(a, b, c);
+
+}
